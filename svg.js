@@ -1,13 +1,13 @@
 
 class SvgBuilder{
-  constructor(){
+  constructor(w = 500, h = 500){
     this.groupid = 0;
     this.svgEnded = false;
-    this.start();
+    this.start(w, h);
   }
 
   // Starts the svg, 500x500, or can be provided with a width and height
-  start(w = 500, h = 500){
+  start(w, h){
     this.s = "<svg width='" + w + "' height='" + h + "'>";
     this.s += "\n";
     this.s += "\n";
