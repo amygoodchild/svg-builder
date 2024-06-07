@@ -1,3 +1,4 @@
+
 class SvgBuilder{
   constructor(){
     this.groupid = 0;
@@ -5,8 +6,8 @@ class SvgBuilder{
     this.start();
   }
 
-  // Starts the svg, defaults to my normalised canvas size (set elsewhere), or can be provided with a width and height
-  start(w = sz.nw, h = sz.nh){
+  // Starts the svg, 500x500, or can be provided with a width and height
+  start(w = 500, h = 500){
     this.s = "<svg width='" + w + "' height='" + h + "'>";
     this.s += "\n";
     this.s += "\n";
@@ -15,7 +16,7 @@ class SvgBuilder{
   // Start a group, either with a provided id or defaults to incremented number 
   startGroup(id = this.groupid){
     this.s += "\n";
-    this.s += "<g id=" + id +  ">";
+    this.s += "<g id='" + id +  "'>";
     this.s += "\n";
 
     this.groupid++;
@@ -70,3 +71,4 @@ class SvgBuilder{
     URL.revokeObjectURL(url);
   }
 }
+
